@@ -1,7 +1,9 @@
 # travelr
 
-A new Flutter project.
+<img width="404" alt="Screenshot 2022-01-27 at 14 05 57" src="https://user-images.githubusercontent.com/36797498/151367438-dd7a5642-87a8-4487-9321-d415148c75d5.png">
 
+
+<img width="404" alt="Screenshot 2022-01-27 at 14 05 44" src="https://user-images.githubusercontent.com/36797498/151367446-532a6813-cb44-46e4-86c5-82d035043035.png">
 ## Getting Started
 
 This project is a starting point for a Flutter application.
