@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Travelr App',
       theme: ThemeData(
           brightness: Brightness.light,
-          scaffoldBackgroundColor: Colors.white,
+          scaffoldBackgroundColor: Color(0xFFFFFFFF),
           textTheme:
               GoogleFonts.poppinsTextTheme().apply(displayColor: kTextColor),
           visualDensity: VisualDensity.adaptivePlatformDensity),

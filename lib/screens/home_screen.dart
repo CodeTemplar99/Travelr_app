@@ -2,11 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:travelr/components/body.dart';
+import 'package:travelr/components/drawer.dart';
 import 'package:travelr/constants.dart';
 import 'package:travelr/size_config.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
+
+  HomeScreen({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -15,14 +18,16 @@ class HomeScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
+        key: _key,
         extendBodyBehindAppBar: true,
-        appBar: buildAppBar(),
+        appBar: buildAppBar(context),
+        drawer: NavDrawer(),
         body: Body(),
       ),
     );
   }
 
-  AppBar buildAppBar() {
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -31,7 +36,7 @@ class HomeScreen extends StatelessWidget {
           Icons.menu,
           color: kIconColor,
         ),
-        onPressed: () {},
+        onPressed: () => {_key.currentState?.openDrawer()},
       ),
       actions: [
         Padding(

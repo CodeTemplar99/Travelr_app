@@ -18,19 +18,19 @@ List<TravelSpot> travelSpots = [
   TravelSpot(
     users: users..shuffle(),
     name: "Lagos",
-    image: "",
+    image: "assets/images/Lagos.jpg",
     date: DateTime(2022, 1, 26),
   ),
   TravelSpot(
     users: users..shuffle(),
     name: "Abuja",
-    image: "",
+    image: "assets/images/Abuja.jpeg",
     date: DateTime(2022, 1, 26),
   ),
   TravelSpot(
     users: users..shuffle(),
     name: "Enugu",
-    image: "",
+    image: "assets/images/Enugu.jpeg",
     date: DateTime(2022, 1, 26),
   ),
 ];
