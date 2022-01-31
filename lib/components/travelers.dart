@@ -2,15 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:travelr/constants.dart';
-import 'package:travelr/models/travel_spot.dart';
+import 'package:travelr/models/user.dart';
 
 import '../size_config.dart';
 
 class Travelers extends StatelessWidget {
-  const Travelers({
-    Key? key,
-  }) : super(key: key);
+  const Travelers({Key? key, required this.users}) : super(key: key);
 
+  final List<User> users;
   @override
   Widget build(BuildContext context) {
     int totalUser = 0;
@@ -19,7 +18,7 @@ class Travelers extends StatelessWidget {
       height: getProportionateScreenHeight(30),
       child: Stack(
         children: [
-          ...List.generate(travelSpots[0].users.length, (index) {
+          ...List.generate(users.length, (index) {
             totalUser++;
             return Positioned(
               left: (22 * index).toDouble(),
@@ -56,7 +55,7 @@ class Travelers extends StatelessWidget {
   ClipOval buildTravelersFace(int index) {
     return ClipOval(
       child: Image.asset(
-        travelSpots[0].users[index].image,
+        users[index].image,
         height: getProportionateScreenHeight(28),
         width: getProportionateScreenWidth(28),
         fit: BoxFit.cover,

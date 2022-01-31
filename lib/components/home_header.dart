@@ -19,7 +19,7 @@ class HomeHeader extends StatelessWidget {
       children: [
         ClipRRect(
           child: ImageFiltered(
-            imageFilter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+            imageFilter: ImageFilter.blur(sigmaX: 0.1, sigmaY: 0.1),
             child: Image.asset(
               "assets/images/Airline.jpeg",
               height: getProportionateScreenWidth(315),

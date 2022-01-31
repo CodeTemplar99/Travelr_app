@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:travelr/components/body.dart';
+import 'package:travelr/components/custom_nav_bar.dart';
 import 'package:travelr/components/drawer.dart';
 import 'package:travelr/constants.dart';
 import 'package:travelr/size_config.dart';
@@ -23,6 +24,9 @@ class HomeScreen extends StatelessWidget {
         appBar: buildAppBar(context),
         drawer: NavDrawer(),
         body: Body(),
+        bottomNavigationBar: CustomNavBar(
+          press: () {},
+        ),
       ),
     );
   }
@@ -52,6 +56,51 @@ class HomeScreen extends StatelessWidget {
               )),
         )
       ],
+    );
+  }
+}
+
+class NavItem extends StatelessWidget {
+  const NavItem({
+    Key? key,
+    required this.icon,
+    required this.title,
+    this.isActive = false,
+    required this.press,
+  }) : super(key: key);
+
+  final IconData icon;
+  final String title;
+  final bool isActive;
+  final GestureTapCallback press;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(5),
+      height: getProportionateScreenHeight(60),
+      width: getProportionateScreenWidth(60),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [if (isActive) KDefaultShadow],
+      ),
+      child: Column(
+        children: [
+          Icon(
+            icon,
+            size: 35,
+            color: kTextColor,
+          ),
+          Spacer(),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.normal,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

@@ -9,7 +9,12 @@ import 'package:travelr/size_config.dart';
 class PlaceCard extends StatelessWidget {
   const PlaceCard({
     Key? key,
+    required this.travelSpot,
+    required this.press,
   }) : super(key: key);
+
+  final TravelSpot travelSpot;
+  final GestureTapCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +31,7 @@ class PlaceCard extends StatelessWidget {
                   topRight: Radius.circular(20),
                 ),
                 image: DecorationImage(
-                  image: AssetImage(travelSpots[0].image),
+                  image: AssetImage(travelSpot.image),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -48,13 +53,15 @@ class PlaceCard extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  travelSpots[0].name,
+                  travelSpot.name,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
                 VerticalSpacing(
                   of: 10,
                 ),
-                Travelers()
+                Travelers(
+                  users: travelSpot.users
+                ),
               ],
             ),
           )
