@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:travelr/components/body.dart';
+import 'package:travelr/screens/home/components/body.dart';
 import 'package:travelr/components/section_title.dart';
 import 'package:travelr/constants.dart';
 import 'package:travelr/models/user.dart';
-
-import '../size_config.dart';
+import 'package:travelr/size_config.dart';
 
 class TopTravellers extends StatelessWidget {
   const TopTravellers({

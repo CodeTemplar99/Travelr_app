@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:travelr/components/home_header.dart';
-import 'package:travelr/components/popular_places.dart';
-import 'package:travelr/components/top_travellers.dart';
 import 'package:travelr/models/user.dart';
+import 'package:travelr/screens/home/components/home_header.dart';
+import 'package:travelr/screens/home/components/popular_places.dart';
+import 'package:travelr/screens/home/components/top_travellers.dart';
 // import 'package:travelr/models/travel_spot.dart';s
 import 'package:travelr/size_config.dart';
 
