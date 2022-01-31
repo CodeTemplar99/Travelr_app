@@ -24,9 +24,7 @@ class HomeScreen extends StatelessWidget {
         appBar: buildAppBar(context),
         drawer: NavDrawer(),
         body: Body(),
-        bottomNavigationBar: CustomNavBar(
-          press: () {},
-        ),
+        bottomNavigationBar: CustomNavBar(),
       ),
     );
   }
